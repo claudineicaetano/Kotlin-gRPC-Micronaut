@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.angularlabs";
+
+package com.angularlabs;
+
+service ProductsService {
+  rpc Create (ProductServiceRequest) returns (ProductServiceResponse) {}
+}
+
+message ProductServiceRequest {
+  string name = 1;
+  double price = 2;
+  int32 quantity_in_stock = 3;
+}
+
+message ProductServiceResponse {
+  int64 id = 1;
+  string name = 2;
+  double price = 3;
+  int32 quantity_in_stock = 4;
+}
