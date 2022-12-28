@@ -1,19 +1,24 @@
 micronaut:
   application:
     name: productsService
+
 datasources:
   default:
-    url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:devDBTest;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password: ''
     driverClassName: org.h2.Driver
-    schema-generate: CREATE_DROP
     dialect: H2
 jpa:
   default:
+    packages-to-scan:
+      - 'com.angularlabs.domain.entity'
     properties:
       hibernate:
         hbm2ddl:
-          auto: update
-        show_sql: true
+          auto: none
 
+flyway:
+  datasources:
+    default:
+      enabled: true

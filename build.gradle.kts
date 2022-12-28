@@ -33,9 +33,18 @@ dependencies {
     implementation("io.micronaut:micronaut-http-client")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-    testImplementation("io.micronaut:micronaut-http-client")
-    testImplementation("org.mockito:mockito-core:4.9.0")
+    implementation("io.micronaut.flyway:micronaut-flyway")
 
+    testImplementation("io.micronaut:micronaut-http-client")
+    testImplementation("org.mockito:mockito-core:4.10.0")
+//    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
+//    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.1")
+    testImplementation("io.micronaut.flyway:micronaut-flyway:5.4.1")
+
+
+    testImplementation("io.cucumber:cucumber-java:7.10.1")
+    testImplementation("io.cucumber:cucumber-junit:7.10.1")
+    testImplementation("org.junit.vintage:junit-vintage-engine:5.9.1")
 
 }
 
